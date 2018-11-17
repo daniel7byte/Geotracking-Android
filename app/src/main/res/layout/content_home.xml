@@ -47,7 +47,8 @@
         android:layout_width="match_parent"
         android:layout_height="161dp"
         android:layout_above="@+id/buttonSend"
-        android:layout_marginBottom="9dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="63dp"
         app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <Button
@@ -63,15 +64,43 @@
         android:layout_width="164dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/buttonFile"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="162dp"
         android:text="Tomar foto" />
 
     <Button
         android:id="@+id/buttonSend"
-        android:layout_width="match_parent"
+        android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="76dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
         android:text="Crear registro" />
+
+    <Button
+        android:id="@+id/buttonGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonSend"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="8dp"
+        android:text="GPS" />
+
+    <TextView
+        android:id="@+id/textViewGPS"
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="89dp"
+        android:layout_toEndOf="@+id/buttonGPS"
+        android:text="...Coordenadas..."
+        android:textSize="18sp" />
 
 </RelativeLayout>

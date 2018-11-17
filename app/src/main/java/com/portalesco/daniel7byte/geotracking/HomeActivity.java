@@ -31,6 +31,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -53,8 +54,9 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseAuth.AuthStateListener listener;
 
-    Button btnSend, btnFile, btnTakePhoto;
+    Button btnSend, btnFile, btnTakePhoto, btnGPS;
     EditText txtBusiness, txtNotes;
+    TextView tvGPS;
     ImageView imgView;
 
     // Para el funcionamiento de Firebase
@@ -117,8 +119,10 @@ public class HomeActivity extends AppCompatActivity {
         btnSend = findViewById(R.id.buttonSend);
         btnFile = findViewById(R.id.buttonFile);
         btnTakePhoto = findViewById(R.id.buttonTakePhoto);
+        btnGPS = findViewById(R.id.buttonGPS);
         txtBusiness = findViewById(R.id.editTextBusiness);
         txtNotes = findViewById(R.id.editTextNotes);
+        tvGPS = findViewById(R.id.textViewGPS);
         imgView = findViewById(R.id.imageView);
 
         // Permisos TOMAR FOTO
@@ -167,10 +171,14 @@ public class HomeActivity extends AppCompatActivity {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                get_gps();
-
                 registrarBusiness();
+            }
+        });
+
+        btnGPS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                get_gps();
             }
         });
     }
@@ -261,14 +269,24 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void get_gps () {
+
+        fProgressDialog.setTitle("GPS");
+        fProgressDialog.setMessage("Obteniendo coordenadas");
+        fProgressDialog.setCancelable(false);
+        fProgressDialog.show();
+
         LocationManager locationManager = (LocationManager) HomeActivity.this.getSystemService(Context.LOCATION_SERVICE);
 
         LocationListener locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
+
+                fProgressDialog.dismiss();
+
                 lat = location.getLatitude() + "";
                 lon = location.getLongitude() + "";
-                Toast.makeText(HomeActivity.this, "Ubicacion actualizada: " + lat + ", " + lon, Toast.LENGTH_SHORT).show();
+                tvGPS.setText(lat + ", " + lon);
+                Toast.makeText(HomeActivity.this, "Ubicacion actualizada", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -384,7 +402,7 @@ public class HomeActivity extends AppCompatActivity {
             MediaScannerConnection.scanFile(this, new String[]{pathImagenTomada}, null, new MediaScannerConnection.OnScanCompletedListener() {
                 @Override
                 public void onScanCompleted(String path, Uri uri) {
-                    Log.i("Ruta de almacenamiento", "Path"+pathImagenTomada);
+                    //Log.i("Ruta de almacenamiento", "Path"+pathImagenTomada);
                 }
             });
 
