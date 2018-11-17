@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "611969820646",
+    "firebase_url": "https://geotracking-de33f.firebaseio.com",
+    "project_id": "geotracking-de33f",
+    "storage_bucket": "geotracking-de33f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611969820646:android:ac2540a481312186",
+        "android_client_info": {
+          "package_name": "com.portalesco.daniel7byte.geotracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611969820646-583jpedohesgnhv4fe1b82hgg5qonkul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.portalesco.daniel7byte.geotracking",
+            "certificate_hash": "ccbe4526fe3489668bcd51a0613c536217fe5f7d"
+          }
+        },
+        {
+          "client_id": "611969820646-a5ng11vlds0udkgad5dd9po69k28ikvs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAlaWPJaPZvTnwfudKk4m7lrZ-ocKBfis"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611969820646-a5ng11vlds0udkgad5dd9po69k28ikvs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Geotracking</string>
+    <string name="title_activity_home">Formulario</string>
+    <string name="title_activity_lists">Tabla</string>
+</resources>

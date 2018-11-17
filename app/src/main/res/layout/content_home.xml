@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".HomeActivity"
+    tools:showIn="@layout/activity_home">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="114dp"
+        android:layout_marginLeft="114dp"
+        android:layout_marginTop="6dp"
+        android:text="Nuevo registro"
+        android:textAllCaps="false"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextBusiness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="51dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Razón Comercial"
+        android:inputType="textAutoComplete" />
+
+    <EditText
+        android:id="@+id/editTextNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="105dp"
+        android:ems="10"
+        android:hint="Notas"
+        android:inputType="textMultiLine" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="161dp"
+        android:layout_above="@+id/buttonSend"
+        android:layout_marginBottom="9dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <Button
+        android:id="@+id/buttonFile"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="162dp"
+        android:text="Añadir imagen" />
+
+    <Button
+        android:id="@+id/buttonTakePhoto"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonFile"
+        android:layout_alignParentEnd="true"
+        android:text="Tomar foto" />
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="76dp"
+        android:text="Crear registro" />
+
+</RelativeLayout>
