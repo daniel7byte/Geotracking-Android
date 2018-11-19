@@ -2,7 +2,6 @@ package com.portalesco.daniel7byte.geotracking;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,12 +16,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.security.PublicKey;
-
 public class MainActivity extends AppCompatActivity {
 
     EditText fTextEMail, fTextPassword;
-    Button fButtonLogin;
+    Button fButtonLogin, fButtonRegister;
     ProgressBar fProgressBar;
 
     FirebaseAuth fAuth;
@@ -37,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         fTextEMail = findViewById(R.id.editTextEMail);
         fTextPassword = findViewById(R.id.editTextPassword);
         fButtonLogin = findViewById(R.id.buttonEntrar);
+        fButtonRegister = findViewById(R.id.buttonEntrar);
         fProgressBar = findViewById(R.id.progressBar);
         fProgressBar.setVisibility(View.INVISIBLE);
 
@@ -64,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ingresar();
+            }
+        });
+
+        fButtonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToRegister();
             }
         });
     }
@@ -98,6 +103,11 @@ public class MainActivity extends AppCompatActivity {
     private void goToHome() {
         Intent goToHome = new Intent(MainActivity.this, HomeActivity.class);
         startActivity(goToHome);
+    }
+
+    private void goToRegister() {
+        Intent goToRegister = new Intent(MainActivity.this, RegisterUserActivity.class);
+        startActivity(goToRegister);
     }
 
     @Override

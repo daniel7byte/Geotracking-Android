@@ -2,7 +2,7 @@ package com.portalesco.daniel7byte.geotracking;
 
 public class Business {
 
-    String business, notes, image, lat, lon;
+    String business, notes, image, lat, lon, emailUser;
 
     public Business(String business, String notes, String image) {
         this.business = business;
@@ -22,6 +22,14 @@ public class Business {
         return business;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
     public void setLat(String lat) {
         this.lat = lat;
     }
@@ -30,11 +38,7 @@ public class Business {
         this.lon = lon;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public String getNotes() {
-        return notes;
+    public void setEmailUser(String emailUser) {
+        this.emailUser = emailUser;
     }
 }

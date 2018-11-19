@@ -100,7 +100,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="89dp"
         android:layout_toEndOf="@+id/buttonGPS"
-        android:text="...Coordenadas..."
+        android:text="0, 0"
         android:textSize="18sp" />
 
 </RelativeLayout>

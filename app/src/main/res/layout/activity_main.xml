@@ -6,12 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="visible" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="Geotracking"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/editTextEMail"
@@ -39,15 +44,30 @@
         android:layout_alignParentStart="true"
         android:text="Iniciar" />
 
+    <Button
+        android:id="@+id/buttonRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonEntrar"
+        android:layout_marginTop="7dp"
+        android:text="REGISTRO" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:text="Geotracking - Login"
+        android:layout_marginBottom="12dp"
+        android:text="Jose Daniel Posso Garcia (@Daniel7Byte)"
         android:textAllCaps="false"
-        android:textSize="30sp"
         android:textStyle="italic" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible" />
 
 </RelativeLayout>

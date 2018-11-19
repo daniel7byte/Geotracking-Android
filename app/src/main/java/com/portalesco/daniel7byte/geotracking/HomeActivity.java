@@ -79,6 +79,8 @@ public class HomeActivity extends AppCompatActivity {
     private static final int GPS_INTENT_COD = 30;
     public String lat, lon;
 
+    public String emailUser = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,7 +148,11 @@ public class HomeActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = fAuth.getCurrentUser();
                 if (user == null){
+                    emailUser = null;
                     goToMain();
+                } else {
+                    emailUser = user.getEmail();
+                    Toast.makeText(HomeActivity.this, emailUser, Toast.LENGTH_SHORT).show();
                 }
             }
         };
@@ -346,6 +352,7 @@ public class HomeActivity extends AppCompatActivity {
             // Tocaba así, porque el constructor no lee variables fuera del metodo, solo con los Setters
             nBusiness.setLat(this.lat);
             nBusiness.setLon(this.lon);
+            nBusiness.setEmailUser(this.emailUser);
             fBusiness.child(idBusiness).setValue(nBusiness);
 
             Toast.makeText(this,"Empresa creada", Toast.LENGTH_LONG).show();
