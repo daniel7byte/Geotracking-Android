@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         fTextEMail = findViewById(R.id.editTextEMail);
         fTextPassword = findViewById(R.id.editTextPassword);
         fButtonLogin = findViewById(R.id.buttonEntrar);
-        fButtonRegister = findViewById(R.id.buttonEntrar);
+        fButtonRegister = findViewById(R.id.buttonRegistro);
         fProgressBar = findViewById(R.id.progressBar);
         fProgressBar.setVisibility(View.INVISIBLE);
 
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goToRegister() {
-        Intent goToRegister = new Intent(MainActivity.this, RegisterUserActivity.class);
+        Intent goToRegister = new Intent(MainActivity.this, NewUserActivity.class);
         startActivity(goToRegister);
     }
 
