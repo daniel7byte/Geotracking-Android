@@ -10,9 +10,14 @@ public class Business {
         this.image = image;
     }
 
+    public String getEmailUser() {
+        return emailUser;
+    }
+
     public String getLat() {
         return lat;
     }
+
 
     public String getLon() {
         return lon;
