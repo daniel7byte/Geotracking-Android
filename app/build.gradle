@@ -14,10 +14,10 @@ android {
         applicationId "com.portalesco.daniel7byte.geotracking"
         minSdkVersion 15
         targetSdkVersion 28
-        versionName '5.1'
+        versionName '5.5'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
-        versionCode 6
+        versionCode 7
     }
     buildTypes {
         release {

@@ -56,11 +56,13 @@ public class ListsActivity extends AppCompatActivity {
     private void goToHome() {
         Intent goToHome = new Intent(ListsActivity.this, HomeActivity.class);
         startActivity(goToHome);
+        finish();
     }
 
     private void goToMain() {
         Intent goToMain = new Intent(ListsActivity.this, MainActivity.class);
         startActivity(goToMain);
+        finish();
     }
 
     @Override

@@ -103,11 +103,13 @@ public class MainActivity extends AppCompatActivity {
     private void goToHome() {
         Intent goToHome = new Intent(MainActivity.this, HomeActivity.class);
         startActivity(goToHome);
+        finish();
     }
 
     private void goToRegister() {
         Intent goToRegister = new Intent(MainActivity.this, NewUserActivity.class);
         startActivity(goToRegister);
+        finish();
     }
 
     @Override

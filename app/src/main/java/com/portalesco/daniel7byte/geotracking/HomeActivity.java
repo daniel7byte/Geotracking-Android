@@ -371,11 +371,13 @@ public class HomeActivity extends AppCompatActivity {
     private void goToMain() {
         Intent goToMain = new Intent(HomeActivity.this, MainActivity.class);
         startActivity(goToMain);
+        finish();
     }
 
     private void goToLists() {
         Intent goToLists = new Intent(HomeActivity.this, ListsActivity.class);
         startActivity(goToLists);
+        finish();
     }
 
     @Override
