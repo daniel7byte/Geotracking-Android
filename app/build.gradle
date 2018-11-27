@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            storeFile file('C:/Users/Usuario/Documents/GitHub/Geotracking/firma.jks')
+            storeFile file('C:/Users/Daniel7Byte/Documents/GitHub/Geotracking-Android/firma.jks')
             keyAlias 'key0'
             keyPassword 'Entrada1'
             storePassword 'Entrada1'
@@ -14,10 +14,10 @@ android {
         applicationId "com.portalesco.daniel7byte.geotracking"
         minSdkVersion 15
         targetSdkVersion 28
-        versionName '5.5'
+        versionName '6'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
-        versionCode 7
+        versionCode 8
     }
     buildTypes {
         release {
