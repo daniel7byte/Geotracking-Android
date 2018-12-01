@@ -1,30 +1,20 @@
 package com.portalesco.daniel7byte.geotracking;
 
-import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 public class ListsActivity extends AppCompatActivity {
 
     FirebaseAuth fAuth;
     FirebaseAuth.AuthStateListener listener;
-    private DatabaseReference mBusinessReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +38,6 @@ public class ListsActivity extends AppCompatActivity {
             }
         });
 
-        mBusinessReference = FirebaseDatabase.getInstance().getReference()
-                .child("-LS5JUYEQP7AO8zfqJAc");
-
         fAuth = FirebaseAuth.getInstance();
         listener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -61,23 +48,6 @@ public class ListsActivity extends AppCompatActivity {
                 }
             }
         };
-
-        ValueEventListener businessListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                Business business = dataSnapshot.getValue(Business.class);
-                // ...
-                Toast.makeText(ListsActivity.this, business.business, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Toast.makeText(ListsActivity.this, "loadPost:onCancelled " + databaseError.toException(), Toast.LENGTH_SHORT).show();
-            }
-        };
-        mBusinessReference.addValueEventListener(businessListener);
     }
 
     private void goToHome() {
